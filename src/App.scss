@@ -1,0 +1,147 @@
+@import './styles/colors.scss';
+
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.container {
+  width: min(1170px, calc(100vw - 100px));
+  margin-inline: auto;
+}
+
+.mainContainer {
+  background: linear-gradient(90deg,
+      rgb(219, 235, 246) 0%,
+      rgba(216, 241, 249, 0.8) 57%,
+      rgb(237, 219, 136) 100%);
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.content {
+  background-color: $white;
+  display: flex;
+  flex-direction: column;
+  border-radius: 0.8rem;
+}
+
+.img {
+  margin-left: 0.625rem;
+  align-items: flex-start;
+  height: 2rem;
+}
+
+.biSearch {
+  position: absolute;
+  right: 2rem;
+  top: 2rem;
+  opacity: 0.3;
+}
+
+.biSearch.active {
+  opacity: 1;
+}
+
+.searchBox::-webkit-input-placeholder {
+  opacity: 0.5;
+}
+
+.searchBox {
+  padding: 0.5rem;
+  min-width: 20rem;
+  position: relative;
+  outline: none;
+  border-radius: 0.25rem;
+  border: 0.188rem solid rgb(231, 229, 229);
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+
+  &:hover {
+    border: 0.188rem solid rgb(207, 227, 250);
+  }
+
+  &:focus {
+    border: 0.188rem solid rgb(145, 183, 231);
+  }
+}
+
+.searchContainer {
+  padding: 1.3rem;
+  display: flex;
+  align-items: center;
+  position: relative;
+  gap: 0.5rem;
+}
+
+.avgDays,
+.avgTemp {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.avgDays {
+  gap: 2rem;
+  justify-content: center;
+}
+
+.avgTemp {
+  gap: 3.7rem;
+  justify-content: space-evenly;
+}
+
+.avgTempWeek {
+  margin: 4rem 0;
+  text-align: center;
+
+  h1 {
+    color: $white;
+    font-size: 6rem;
+    font-weight: bold;
+    margin-top: 1rem;
+  }
+
+  .avgTempWeekRange {
+    color: $space_missions;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+}
+
+@media (max-width: 550px) {
+  .searchBox {
+    min-width: 19rem;
+  }
+
+  .searchContainer {
+    padding: 1rem;
+  }
+
+  .biSearch {
+    top: 1.75rem;
+  }
+}
+
+@media (max-width: 495px) {
+  .searchBox {
+    min-width: 14rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .searchBox {
+    min-width: 12rem;
+  }
+
+  .biSearch {
+    display: none;
+  }
+}

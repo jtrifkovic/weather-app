@@ -1,0 +1,16 @@
+@import '../../styles/colors.scss';
+
+.selectBox {
+  padding: 0.5rem;
+  border: 0.188rem solid $cold_morning;
+  border-radius: 0.313rem;
+  outline: none;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  &:focus {
+    border: 0.188rem solid $blue_shutters;
+  }
+  &:hover {
+    border: 0.188rem solid $salty_ice;
+  }
+}
